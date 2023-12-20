@@ -5,28 +5,22 @@ One sensing a stimulus, the vehicle adapts it course of movement to drive toward
 
 ## Description
 
-In this learning experiment, the stimulus is seeing a duckie and the vehicle must adapt its course of motion to not run over the duckie.
+In this learning experiment, the *stimulus* is seeing a Duckie and the vehicle must adapt its course of motion to not run over any Duckie.
 
-You will design the Duckiebot to navigate a plane without running over duckies.
+You can access the learning experience here: <https://github.com/duckietown/duckietown-lx/tree/mooc2022/braitenberg>
 
-- You will process the camera's image searching for yellow color indicating the presence of a duckie in front of the Duckiebot.
-- You will conceive an algorithm (calculation over the pixels of the image) that takes in the camera's image and outputs instructions (actuation) to the Duckiebot's wheels.
-The actuation should prolong the distance driven and time the Duckiebot navigates the place without running over a duckie.
-- The actuation to the right and left wheel motors are calculated as below:
+You will design the Duckiebot to navigate a plane without running over Duckies.
 
-    left\_motor  = const + gain *  np.sum( LEFT * preprocess(image) )
-    right\_motor = const + gain *  np.sum( RIGHT * preprocess(image) )
+- You will process the camera's image to locate Duckies.
+- 
+- You will create an algorithm that takes in the camera's feed and actuates to the Duckiebot's wheels to navigate around the Duckies.
+The algorithm should prolong the distance driven and time the Duckiebot navigates the place without running over a duckie.
 
-`const` and `gain` are in the `agent.py` file.
-`LEFT` and `RIGHT` are masks that you will design in the `connections.py` file.
-
-You will design the `preprocess()` function to detect the Duckiebots based on their color.
-
+You will complete the following notebooks:
 
 1) `braitenberg01.ipynb`: A brief intro image manipulation on Python.
-2) `braitenberg02.ipynb` You will construct a color filter that detects yellow duckies in an image.
-3) `braitenberg03.ipynb`: You will complete an algorithm that takes in a image from the duckie's camera feed, detects the yellow duckies in the image based on the previous exercise,
-   and then performs a calculation over the image's pixels that actuates the wheels to avoid running over the duckies.
+2) `braitenberg02.ipynb` You will construct an image filter that locates Duckies.
+3) `braitenberg03.ipynb`: You will complete an algorithm to actuate the wheels based on the processed camera feed.
 
 ## Grading
 
