@@ -5,6 +5,8 @@ The Duckiebot needs to drive as close to the Duckie as possible and then stop be
 
 You will develop and train a convolutional neural network (CNN) to detect the Duckie and then complete the algorithm to stop the Duckiebot.
 
+You can access the learning experience here: <https://github.com/duckietown/duckietown-lx/tree/mooc2022/object-detection/notebooks>
+
 You will complete the following notebooks:
 - `cnn.ipynb`: Directs you to Google Colab notebook where you can get familiar with CNNs.
 
