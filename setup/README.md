@@ -7,18 +7,18 @@ By the end of this document, you will have:
 2. Installed Duckietown dependencies and the shell
 3. Learned about the terminal
 4. Installed Python and some required modules
-5. Tested our Python installation with a basic script
+5. Tested your Python installation with a basic script
 
 ## Operating System Setup
 
 The Duckietown ecosystem is based upon a flavour of the [Linux operating system](https://www.linux.com/what-is-linux/) called [Ubuntu](https://ubuntu.com/desktop). 
 Officially, Duckietown only supports Ubuntu Linux distributions and has unofficial support for MacOS, but does not support Windows natively 
-(see this [page](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_laptop/index.html) for more information.
+(see this [page](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_laptop/index.html) for more information).
 
 Depending on the computer and the operating system (OS) that you have, you have a number of options for running Ubuntu on your machine. 
 <ol>
   <li>You can install Ubuntu as the only OS on your machine.</li>
-  <li>You can install an Ubuntu OS alongside your other operating system - i.e., you will have two OSes that you will have to select between when booting up your machine. This is known as "dual-booting"</li>
+  <li>You can install Ubuntu OS alongside your other operating system - i.e., you will have two OSes that you will have to select between when booting up your machine. This is known as "dual-booting"</li>
   <li>You can install a piece of software called a virtual machine (VM) that provides a virtual computer that exists in software on top of your host machine and install Ubuntu on that VM.</li>
   <li>If you have Windows 11 on your Laptop, you can install a program called Windows Subsystem for Linux (WSL), a lightweight VM developed by Microsoft for hosting Linux OSs.</li>
 </ol>
@@ -51,7 +51,7 @@ We provide guidance on what we believe are the relatively easier and less risky 
     </td>
     <td>
       <ul>
-        <li>Are using a Mac computer and prefer not risking your MacOS system and data.</li>
+        <li>Are using a Windows or Mac computer and prefer not risking your operating system and data.</li>
       </ul>
     </td>
   </tr>
@@ -95,48 +95,33 @@ The instructions below summarize how to perform these tasks, and summarize more 
 - [ ] Check that your disk has enough free space (>60 GB). You can do this by going to the Start Menu, and searching for 'Storage Settings'.
 Open the Storage Settings application, which will show you how much space you have left on your disk drive.
 
-- [ ] There are several VM applications out there. In this course, we recommend using the freely available Oracle VM VirtualBox.
-Download VirtualBox from [here](https://www.virtualbox.org/) and install it on your machine.
+- [ ] There are several VM applications out there. We recommend using the freely available VMWare Workstation Player.
+Download VMWare Workstation Player 17 from [here](https://www.vmware.com/ca/products/workstation-player.html) and install it on your machine.
 
 - [ ] Download the [Ubuntu 22.04.3 LTS](https://ubuntu.com/download/desktop) .iso distribution image.
     
-- [ ] Once installed, open VirtualBox and click `New` to create a new VM. Fill in the appropriate details:
-<ul>
-  <li>Name: If you include the word Ubuntu in your name, the Type and Version will auto-update.</li>
-  <li>Machine Folder: This is where your virtual machines will be stored so you can resume working on them whenever you like.</li>
-  <li>ISO Image: Here, you need to add a link to the ISO you downloaded from the Ubuntu website.</li>
-  <li>Skip Unattended Installation: Leave this unchecked for automated installation of Ubuntu upon creation of the VM.</li>
-</ul>
+- [ ] Once installed, open VMWare Workstation Player and click `Player -> File -> New Virtual Machine (Ctrl + N)` to create a new VM. Populate the Installer dick image file (iso) field-box in the open window with the link to the ISO you downloaded from the Ubuntu website.
 
-- [ ] On the next page, populate your username and password here in addition to the name you want to give your machine (aka hostname) so that it can be configured automatically during the first boot. 
-
-> [!caution]
-> You must change the username and password to something other than the defaults!
-> Failure to do so will result in your user not having sufficient permissions and access privileges to configure Ubuntu for Duckietown properly. 
+- [ ] On the next page, populate your username and password that will give you secure access to the virtual machine.
+- [ ] On the next page, give your virtual machine a name.
 
 - [ ] On the next couple of screens, we can specify how much of our host (i.e., Windows) machine’s memory and processors the VM can use, in addition to creating a virtual disk file.
 <ul>
-<li>For good performance, Try to remain in the green areas of each slider to prevent issues with your machine running both the VM and the host OS.</li>
+<li>For good performance, Try to remain above the recommendations to prevent issues with your machine running both the VM and the host OS.</li>
 <li>It’s recommended to provide your VM with around 8GB of RAM (although 4GB will still be usable) and 4 CPUs if possible.</li>
 <li>We recommend you allocate 60 GB or more of disk space for the virtual machine. By default the hard disk will scale dynamically as more memory is required up to the defined limit 
   (i.e., your VM file will not initially take up the amount of space that you allocate it, but it will dynamically grow as you add files to the virtual disk). 
-  If you want to pre-allocate the full amount, check the ‘Pre-allocate Full Size’ check box. This will improve performance but may take up unnecessary space.</li>
+  </li>
 </ul>
 
 - [ ] On the next page, you will see a configuration summary of your VM. Ensure the details are correct and click `Finish`.
-  
-- [ ] To enable bridged networking, open the Settings dialog of the virtual machine, go to the Network page and select Bridged Network in the drop-down list for the Attached To field.
-Select a host interface from the list at the bottom of the page, which contains the physical network interfaces of your system.
 
-- [ ] Click start to launch the virtual machine. On first boot, the unattended installation will kick in, 
-so do not interact with the prompt to 'Try and Install Ubuntu' and let it progress automatically to the splash screen and into the installer. 
+- [ ] After the installation, you can navigate to the virtual machine and Click 'Play virtual machine' to launch the virtual machine. 
 Once the installation completes, the VM will automatically reboot to complete the installation. 
 Finally, you will be greeted with the Ubuntu log-in screen where you can enter your username and password defined during the initial setup.
 
-- [ ] Once you’ve finished your session on your VM you can close your VM by clicking the `X`. 
-in the top right of the window and choosing whether to keep your machine frozen in its current state or shut it down completely.
-
-- [ ] After installing Ubuntu on VMWare, edit the virtual machine network adapter to Bridged (Automatic) as shown in the figure below.
+- [ ] Once you’ve finished your session on your VM you can close your VM by clicking the shot-down button. 
+in the top right of the window and choosing whether to keep your machine frozen in its current state (Suspend) or shut it down completely (Power Off).
 
 ### Install Ubuntu on Windows Subsystem for Linux 2 (WSL)
 
@@ -243,10 +228,12 @@ Here, we provide additional guidance and troubleshooting for known issues during
 > - [ ] Access `Settings > Resources > WSL integration` and check :heavy_check_mark: `Enable integration with my default WSL distro` and `Ubuntu-22.04` under `Enable integration with additional distros:`.
 > - [ ] Apply and restart.
 
+![plot](./dockerwsl.JPG)
+
 > [!tip]
 > **Problem:** If you obtain an error:
 > <code>docker: permission denied while trying to connect to the Docker daemon socket</code>,
-> you can fix this issue by running Docker as a non-root user and by yourself to the docker group.
+> you can fix this issue by running Docker as a non-root user and adding yourself to the docker group.
 >
 > To do this, we will follow the instructions located [here](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) and summarized below.
 >> :heavy_exclamation_mark: Note that the following grants privileges equivalent to the root user. For details on how this impacts security in your system, see Docker
@@ -352,13 +339,12 @@ Spend some time familiarizing yourself with the IDE. A series of excellent begin
 > - [ ] Open up your Python IDE of choice and enter the following script in a new file named `test\char_cv2.py`
 > 
 >       import cv2
->       import numpy as np
 >       from matplotlib import pyplot as plt
 >       img = cv2.imread('programmers_credo.jpg',cv2.IMREAD_GRAYSCALE)
 >       plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
 >       plt.plot([150,250,350],[350,360,380],'c', linewidth=5)
 >       plt.show()
 >
-> - [ ] Download the image file `programmers\char_credo.jpg` from OnQ under `Content->Week 1->Required Resources` and save it in the same folder as the Python script file you created above.
+> - [ ] Download the image file `programmers_credo.jpg` from this Setup GitHub repository and save it in the same folder as the Python script file you created above.
 > 
 > - [ ] Run the script and ensure you get an expected output.
