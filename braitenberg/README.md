@@ -11,16 +11,15 @@ You can access the learning experience here: <https://github.com/duckietown/duck
 
 You will design the Duckiebot to navigate a plane without running over Duckies.
 
-- You will process the camera's image to locate Duckies.
-- 
-- You will create an algorithm that takes in the camera's feed and actuates to the Duckiebot's wheels to navigate around the Duckies.
+- You will process the camera's image to detect and locate Duckies.
+- You will create an algorithm that takes in the camera's feed and actuates the Duckiebot's wheels to navigate around the Duckies.
 The algorithm should prolong the distance driven and time the Duckiebot navigates the place without running over a duckie.
 
 You will complete the following notebooks:
 
-1) `braitenberg01.ipynb`: A brief intro image manipulation on Python.
+1) `braitenberg01.ipynb`: A brief introduction into image manipulation in Python.
 2) `braitenberg02.ipynb` You will construct an image filter that locates Duckies.
-3) `braitenberg03.ipynb`: You will complete an algorithm to actuate the wheels based on the processed camera feed.
+3) `braitenberg03.ipynb`: You will develop an algorithm to actuate the wheels based on the processed camera feed.
 
 ## Grading
 
@@ -36,7 +35,7 @@ The grading metric is based on the distance from the starting point.
 
 Your submission will be auto-graded. Your grade (out of 100%) will be calculated as:
 
-$$75\\% \times \\{\text{status} == \text{success}\\} + 25\\% \times \frac{\max(\text{distance-from-start\\_mean}, 6)}{5}$$
+$$75\\% \times \\{\text{status} == \text{success}\\} + 25\\% \times \frac{\min(\text{distance-from-start\\_mean}, 6)}{5}$$
 
 You have an opportunity to get up to 5% bonus.
 Note that the maximum distance from start is 5.3 on the [Braitenberg scoreboard](https://challenges.duckietown.org/v4/). 
@@ -46,14 +45,15 @@ Check them out to improve the robot. We recommend downloading VLC Media Player o
 
 What you need to submit:
 
-- [ ] Create a new `.md` markdown file in your assignment repository and name it `submission.md`.
-- [ ] Write in your markdown file only the link to your submission on the duckietown challenges hub. i.e., the .md file should only contain the following text: `https://challenges.duckietown.org/v4/humans/submissions/<SUBMISSION\_NUMBER>`
+- [ ] Find the `.md` markdown file in your assignment repository that has the name `submission.md`.
+- [ ] Write in your markdown file **only** the number of your submission to the duckietown challenges hub. i.e., #####
 
 > [!caution]
 > Make sure to not add anything else as that may interfere with the autograder.
+> Do not modify `submission_test.md` so that GitHub Actions verifies that you have correctly included your submission number.
 
 Our autograder will do the following:
 
-1) Will cross-check the user name on the submissions page to confirm that it is your submission.
+1) Will access your submission on the cross-check the user name on the submissions page to confirm that it is your submission.
 2) Will confirm at least one success flag under the status column.
-3) Will scroll down and read all of `distance-from-start_mean` scores and will grant you the maximum score. 
+3) Will scroll down and read all `distance-from-start_mean` scores and will grant you the maximum score. 
