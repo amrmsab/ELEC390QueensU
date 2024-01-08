@@ -1,6 +1,6 @@
 def test_hello():
   try:
-    with open('submission.md', 'r', encoding='utf-8') as file:
+    with open('setup/submission.md', 'r', encoding='utf-8') as file:
       submission_no = file.readline().strip()
   except FileNotFoundError:
     print(f"File not found: {file_path}")
