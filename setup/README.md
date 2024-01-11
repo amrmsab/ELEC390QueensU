@@ -83,7 +83,10 @@ We provide guidance on what we believe are the relatively easier and less risky 
   </tr>
 </table>
 </div>
-  
+
+> [!IMPORTANT]
+> We recommend a VM solution. We anticipate you will find it much easier to proceed in the course with a VM.
+
 ### Install Ubuntu on a Virtual Machine (VM)
 
 A virtual machine (VM) is a computer file, typically called an image, that behaves like an actual computer and emulates a physical machine complete with CPU, memory, disks to store your files, 
@@ -331,6 +334,7 @@ Visual Studio Code (aka VS Code) is a flexible development environment that isn'
 
 Spend some time familiarizing yourself with the IDE. A series of excellent beginner videos on how to use VS code can be found here: <https://code.visualstudio.com/docs/introvideos/basics>
 
+
 > **Compiling Your First OpenCV Program**
 > Now that we have Ubuntu, Python and required modules set up, let's go ahead and test our setup by creating our first OpenCV python script. 
 >
@@ -348,3 +352,35 @@ Spend some time familiarizing yourself with the IDE. A series of excellent begin
 > - [ ] Download the image file `programmers_credo.jpg` from this Setup GitHub repository and save it in the same folder as the Python script file you created above.
 > 
 > - [ ] Run the script and ensure you get an expected output.
+
+
+> [!tip]
+> **Further Guidance for WSL/VSCode users to complete the above Python activity**
+> 
+> After you have finished installing WSL and VSCode on Microsoft.
+> 1) If you cannot import openCV
+> For example, due to an error like so: "libGL.so.1: cannot open shared object file: No such file or directory".
+> In the Linux terminal, input
+> 
+>         sudo apt-get update
+>         sudo apt-get install -y python3-opencv 
+>
+>         pip install opencv-python
+> 
+> This install further dependencies that are not being automatically installed when you try to install opencv.
+> 
+> This comes courtesy from [here](https://itsmycode.com/importerror-libgl-so-1-cannot-open-shared-object-file-no-such-file-or-directory/)
+> 
+> Next, after you follow the instructions to pair your VSCode with WSL on <https://code.visualstudio.com/docs/remote/wsl>
+> 
+> 2) If you cannot plot the jpg
+> 
+> Install a backend GUI in the Linux terminal. The following install tkinter.
+> 
+>         sudo apt-get install python3-tk
+>
+> Next, type the following in your Python file header and run on VSCode again.
+> 
+>         import matplotlib
+>         matplotlib.use('TkAgg')
+>         import matplotlib.pyplot as plt
