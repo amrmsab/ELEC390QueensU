@@ -26,21 +26,25 @@ Your submission will be auto-graded.
 
 Your grade (out of 100\%) will be calculated as:
 
-$$75\\% \times \\{\text{status} == \text{success}\\} + 10\\% \times \frac{1}{\min(\text{deviation-center-line\\_median}, 0.4)}$$
+$$75\\% \times \\{\text{status} == \text{success}\\} + \left( 10\\% \times \frac{0.6}{\max(\text{deviation-center-line\\_median}, 0.45)} \right)$$
 
-$$\quad + 10\\% \times \frac{\max(\text{driven\\_lanedir\\_consec\\_median}, 8)}{6} + 5\\% \times \frac{\text{survival\\_time\\_median}}{60}$$
+$$\quad + \left( 10\\% \times \frac{\min(\text{driven\\_lanedir\\_consec\\_median}, 8)}{6} \right) + \left( 5\\% \times \frac{\text{survival\\_time\\_median}}{60} \right)$$
 
 ## Submission
 
-- [ ] Create a new `.md` markdown file and name it `submission.md`.
+What you need to submit:
 
-Write in your markdown file only the link to your submission on the duckietown challenges hub. i.e., the .md file should only contain the following text:
-`https://challenges.duckietown.org/v4/humans/submissions/<SUBMISSION\_NUMBER>`
+- [ ] Find the `.md` markdown file in your assignment repository that has the name `submission.md`.
+- [ ] In the markdown file, on the first line, write the number of your submission to the duckietown challenges hub. This is the 5 digit number that identifies your submission. This must be the same number that ends the url to your submission page (https://challenges.duckietown.org/v4/humans/submissions/#####) i.e., Only write #####
+- [ ] In the markdown file, on the second line, write your username, i.e., user####
 
 > [!caution]
 > Make sure to not add anything else as that may interfere with the autograder.
+> Do not modify `submission_test.md` so that GitHub Actions verifies that you have correctly included your submission number.
+> Make sure to submit your own work.
 
 Our autograder will do the following:
-1) Will cross-check the User name on the submissions page to confirm that it is your submission.
-2) Will confirm atleast one success flag under the status column.
-3) Will scroll down and read all of `deviation-center-line_median`, `driven_lanedir_consec_median`, `survival_time_median` scores and will grant you best scores.
+
+1) access your submission on the cross-check the user name on the submissions page to confirm that it is your submission.
+2) scroll down and confirm at least one success flag under the status column.
+3) read all of `deviation-center-line_median`, `driven_lanedir_consec_median`, `survival_time_median` scores and will grant you best scores.
