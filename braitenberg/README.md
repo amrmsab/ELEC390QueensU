@@ -41,19 +41,21 @@ You have an opportunity to get up to 5% bonus.
 Note that the maximum distance from start is 5.3 on the [Braitenberg scoreboard](https://challenges.duckietown.org/v4/). 
 
 If you navigate through the `challenge-evaluation-output` folder, you will stumble upon GIFs and mp4 videos that will show you what your Duckiebot did in simulation. 
-Check them out to improve the robot. We recommend downloading VLC Media Player on Ubuntu (on WLS) to play the mp4 videos.
+Check them out to improve the robot. We recommend downloading VLC Media Player on Ubuntu to play the mp4 videos.
 
 What you need to submit:
 
 - [ ] Find the `.md` markdown file in your assignment repository that has the name `submission.md`.
-- [ ] Write in your markdown file **only** the number of your submission to the duckietown challenges hub. i.e., #####
+- [ ] In the markdown file, on the first line, write the number of your submission to the duckietown challenges hub. This is the 5 digit number that identifies your submission. This must be the same number that ends the url to your submission page (https://challenges.duckietown.org/v4/humans/submissions/#####) i.e., Only write #####
+- [ ] In the markdown file, on the second line, write your username, i.e., user####
 
 > [!caution]
 > Make sure to not add anything else as that may interfere with the autograder.
 > Do not modify `submission_test.md` so that GitHub Actions verifies that you have correctly included your submission number.
+> Make sure to submit your own work.
 
 Our autograder will do the following:
 
-1) Will access your submission on the cross-check the user name on the submissions page to confirm that it is your submission.
-2) Will confirm at least one success flag under the status column.
-3) Will scroll down and read all `distance-from-start_mean` scores and will grant you the maximum score. 
+1) access your submission on the cross-check the user name on the submissions page to confirm that it is your submission.
+2) scroll down and confirm at least one success flag under the status column.
+3) read all `distance-from-start_mean` scores and will grant you the maximum score. 
