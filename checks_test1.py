@@ -1,4 +1,4 @@
-def test_hello():
+def test1():
   try:
     with open('setup/submission.md', 'r', encoding='utf-8') as file:
       submission_no = file.readline().strip()
