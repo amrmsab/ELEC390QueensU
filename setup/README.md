@@ -15,6 +15,9 @@ The Duckietown ecosystem is based upon a flavour of the [Linux operating system]
 Officially, Duckietown only supports Ubuntu Linux distributions and has unofficial support for MacOS, but does not support Windows natively 
 (see this [page](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_laptop/index.html) for more information).
 
+> [!note]
+> If you are a MacOS or Linux user, you do not need to install a Ubuntu distro. Feel free to scroll down to [Section: The Command Line](#the-command-line)
+
 Depending on the computer and the operating system (OS) that you have, you have a number of options for running Ubuntu on your machine. 
 <ol>
   <li>You can install Ubuntu as the only OS on your machine.</li>
@@ -257,6 +260,53 @@ Here, we provide additional guidance and troubleshooting for known issues during
 > **Problem:** `which dts` does not run after installing the Duckietown Shell (dts).
 >
 > If you cannot successfully run `which dts` after installing the duckietown-shell, close and restart your Linux shell and try again.
+
+> [!tip]
+> When sourcing dts in Step 3: Duckietown Shell Installation, we have to add
+>
+>      export PATH=~/.local/bin:${PATH}
+> 
+> to the end of our .bashrc or .zshrc files in the home directorry.
+>
+> 1) Type the following into your  CLI
+> 
+>         cd ~
+>         ls -a
+> 
+> Look to see which of .bashrc or .zshrc files you have.
+> 
+> If you have .bashrc .
+> 
+> Type in
+> 
+>       nano ~/.bashrc
+>
+> This will open the .bashrc file.
+> 
+> Move the cursor to the end of the file using the arrow keys and add the following line at the end of the file:
+> 
+>       export PATH=~/.local/bin:${PATH}
+>
+> Save and exit nano. In nano, you can do this by pressing Ctrl + X, then press Y to confirm the changes, and finally press Enter to exit.
+> 
+> Alternatively, you can use vim instead of nano.
+> 
+> Or use the GUI to go to your home directory and open your .bashrc or .zshrc file with your text editor, e.g., notepad.
+> 
+> If you are on WSL, remember that you can type in \\wsl$ in your file explorer to do that.
+> 
+> 2. After editing the .bashrc file, you need to source it to apply the changes without restarting your terminal. You can do this by running:
+> 
+>         source ~/.bashrc
+> 
+> Now, your system should be able to find local binaries in the ~/.local/bin directory. If you have any executables or scripts in that directory, they should be accessible from
+> anywhere in the terminal.
+> 
+> You can check if you have dts in that directory by typing 
+> 
+>       cd ~/.local/bin
+> 
+> and searching visually for dts in that directory.
 
 ## Python Installation
 
